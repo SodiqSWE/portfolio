@@ -4,9 +4,9 @@ const Contact = () => {
   return (
     <section id="contact">
       <h2>Contact</h2>
-      <p>Email: your.email@example.com</p>
-      <p>LinkedIn: your.email@example.com</p>
-      <p>GitHub: your.email@example.com</p>
+      <p>Email: sodiq260@gmail.com</p>
+      <p>LinkedIn: in/abdul-sodiq-odeyale</p>
+      <p>GitHub: github.com/SodiqSWE</p>
     </section>
   );
 };
