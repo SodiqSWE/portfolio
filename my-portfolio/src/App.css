@@ -45,12 +45,24 @@
   float: left;
   border-radius: 50%;
   margin-right: 10px; /* Optional */
+  width: 300px
 }
 
 .flex-container {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+}
+
+.my-name {
+  color: yellow;
+}
+
+.header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+  text-align: center;
 }
 
 header, footer {
@@ -61,6 +73,8 @@ header, footer {
 
 main {
   padding: 20px;
+  background-color: #282c34;
+  color: white;
 }
 
 nav a {
