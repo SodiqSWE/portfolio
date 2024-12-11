@@ -1,10 +1,11 @@
 <template>
-  <div id="app">
+  <div>
+  <!-- <div id="app" class="bg-gray-100 text-center py-10"> -->
     <header>
-      <nav>
-        <ul>
-          <li><router-link to="/">Home</router-link></li>
-          <li><router-link to="/about">About</router-link></li>
+      <nav class="container mx-auto px-4 py-2 flex items-center justify-between">
+        <ul class="flex space-x-4">
+          <li><router-link to="/" class="text-gray-800 hover:text-gray-600 transition-colors">Home</router-link></li>
+          <li><router-link to="/about" class="text-gray-800 hover:text-gray-600 transition-colors">About</router-link></li>
           <li><router-link to="/projects">Projects</router-link></li>
           <li><router-link to="/contact">Contact</router-link></li>
         </ul>
@@ -37,7 +38,7 @@
   min-height: 100vh;
 }
 
-header {
+/* header {
   background-color: #333;
   color: white;
   padding: 1rem;
@@ -64,7 +65,7 @@ nav ul li a {
 nav ul li a.router-link-active {
   font-weight: bold;
   border-bottom: 2px solid white;
-}
+} */
 
 main {
   flex: 1;
