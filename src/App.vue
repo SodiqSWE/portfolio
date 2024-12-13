@@ -1,9 +1,9 @@
 <template>
   <div>
   <!-- <div id="app" class="bg-gray-100 text-center py-10"> -->
-    <header>
-      <nav class="container mx-auto px-4 py-2 flex items-center justify-between">
-        <ul class="flex space-x-4 items-center">
+    <header class="sticky top-0 backdrop-blur-sm bg-opacity-50 bg-slate-800">
+      <nav class="container mx-auto px-4 py-2 flex items-center justify-center">
+        <ul class="flex space-x-4">
           <li><router-link to="/" class="hover:text-white transition-colors">Home</router-link></li>
           <li><router-link to="/about" class="hover:text-white transition-colors">About</router-link></li>
           <li><router-link to="/projects" class="hover:text-white transition-colors">Projects</router-link></li>

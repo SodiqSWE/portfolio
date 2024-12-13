@@ -11,6 +11,26 @@
         When I'm not coding, you can find me exploring new tech trends, playing games,
         or enjoying a good book.
       </p>
+      <p>
+        Hi, I'm Sodiq! A software developer with 2+ years of experience creating scalable solutions, 
+        from building APIs and ETL tools to designing frontends with Vue.js and React. 
+        I enjoy collaborating remotely and exploring new tech like TypeScript in my personal projects. 
+        Outside of work, I’m into gaming, cars, and PC building, which keeps my creativity and problem-solving skills sharp.
+      </p>
+      <p>
+        When I'm not coding, you can find me exploring new tech trends, playing games,
+        or enjoying a good book.
+      </p>
+      <p>
+        Hi, I'm Sodiq! A software developer with 2+ years of experience creating scalable solutions, 
+        from building APIs and ETL tools to designing frontends with Vue.js and React. 
+        I enjoy collaborating remotely and exploring new tech like TypeScript in my personal projects. 
+        Outside of work, I’m into gaming, cars, and PC building, which keeps my creativity and problem-solving skills sharp.
+      </p>
+      <p>
+        When I'm not coding, you can find me exploring new tech trends, playing games,
+        or enjoying a good book.
+      </p>
     </section>
   </template>
   
