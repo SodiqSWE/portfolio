@@ -1,8 +1,8 @@
 <template>
   <div class="flex flex-col min-h-screen">
   <!-- <div id="app" class="bg-gray-100 text-center py-10"> -->
-    <header class="container fixed top-0 backdrop-blur-sm bg-gradient-to-b from-black-100 bg-opacity-50 bg-slate-800 z-50 py-2">
-      <nav class="container mx-auto px-4 py-2 flex items-center justify-center">
+    <header class="fixed top-0 w-full backdrop-blur-sm bg-gradient-to-b from-black-100 bg-opacity-50 bg-slate-800 z-50 py-2 m-0">
+      <nav class=" mx-auto px-4 py-2 flex justify-center">
         <ul class="flex space-x-4">
           <li><router-link to="/" class="hover:text-white transition-colors duration-500 ease-in-out">Home</router-link></li>
           <!-- <li><router-link to="/about" class="hover:text-white transition-colors duration-500 ease-in-out">About</router-link></li> -->
