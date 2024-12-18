@@ -12,19 +12,78 @@
         When I'm not coding, you can find me exploring new tech trends, playing games,
         or enjoying a good anime series.
       </p>
+
       <div class="text-white text-center font-bold pb-4">My Tools</div>
-      <div class="overflow-hidden bg-gray-900 py-4">
-        <!-- Gradient Mask -->
-        <div class="absolute top-0 left-0 bg-gradient-to-r from-gray-900 via-transparent to-gray-900 pointer-events-none z-10 h-full w-full"></div>
-        <div class="relative flex animate-scroll whitespace-nowrap space-x-8">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" class="h-16 inline-block">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg" alt="Vue JS" class="h-16 inline-block">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="Javascript" class="h-16 inline-block">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original-wordmark.svg" alt="Logo 4" class="h-16 inline-block">
-          <!-- <img src="logo5.png" alt="Logo 5" class="h-16 inline-block">
-          <img src="logo6.png" alt="Logo 6" class="h-16 inline-block"> -->
-        </div>
+      
+      <div class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
+        <ul class="relative flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-scroll">
+          <li>
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" class="h-16 inline-block">
+          </li>
+          <li>
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java" class="h-16 inline-block">
+          </li>
+          <li>
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="Typescript" class="h-16 inline-block">
+          </li>
+          <li>
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="Javascript" class="h-16 inline-block">
+          </li>
+          <li>
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg" alt="Vue JS" class="h-16 inline-block">
+          </li>
+          <li>
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original-wordmark.svg" alt="Tailwindcss" class="h-16 inline-block">
+          </li>
+          <li>
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" class="h-16 inline-block">
+          </li>
+          <li>
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" class="h-16 inline-block">
+          </li>
+          <li>
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/graphql/graphql-plain.svg" alt="GraphQL" class="h-16 inline-block">
+          </li>
+          <li>
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" class="h-16 inline-block">
+          </li>
+        </ul>
+        <ul class="relative flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-scroll" aria-hidden="true">
+          <li>
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" class="h-16 inline-block">
+          </li>
+          <li>
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java" class="h-16 inline-block">
+          </li>
+          <li>
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="Typescript" class="h-16 inline-block">
+          </li>
+          <li>
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="Javascript" class="h-16 inline-block">
+          </li>
+          <li>
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg" alt="Vue JS" class="h-16 inline-block">
+          </li>
+          <li>
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original-wordmark.svg" alt="Tailwindcss" class="h-16 inline-block">
+          </li>
+          <li>
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" class="h-16 inline-block">
+          </li>
+          <li>
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" class="h-16 inline-block">
+          </li>
+          <li>
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/graphql/graphql-plain.svg" alt="GraphQL" class="h-16 inline-block">
+          </li>
+          <li>
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" class="h-16 inline-block">
+          </li>
+        </ul>
       </div>
+
+
+
     </section>
   </template>
   
