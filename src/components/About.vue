@@ -1,21 +1,24 @@
 <template>
     <section class="about">
+      <div class="flex items-center justify-center">
+        <img src="../assets/memoji2.jpg" alt="Sodiq Memoji" class="h-32 w-32 rounded-full border-4 border-gray-950 shadow-lg object-cover">
+      </div>
       <div class="text-white text-left font-bold">Sodiq Odeyale</div>
       <div class="text-white text-left font-bold pb-4">Software Engineer</div>
-      <p>
+      <p class="text-gray-300">
         Hi, I'm Sodiq! A software developer with 2+ years of experience creating scalable solutions, 
-        from building APIs and ETL tools to designing frontends with Vue.js and React. 
-        I enjoy collaborating remotely and exploring new tech like TypeScript in my personal projects. 
+        from building APIs, ETL tools and CRUD systems, to designing frontends with Javascript frameworks like Vue.js and React. 
+        I enjoy collaborating with a team and exploring new tech in my personal projects. 
         Outside of work, I’m into gaming, cars, and PC building, which keeps my creativity and problem-solving skills sharp.
       </p>
-      <p class="pb-10">
+      <p class="pb-10 text-gray-300">
         When I'm not coding, you can find me exploring new tech trends, playing games,
         or enjoying a good anime series.
       </p>
 
       <div class="text-white text-center font-bold pb-4">My Tools</div>
       
-      <div class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
+      <div class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)] pb-10">
         <ul class="relative flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-scroll">
           <li>
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" class="h-16 inline-block">
@@ -81,9 +84,22 @@
           </li>
         </ul>
       </div>
-
-
-
+      <div>
+        <p class="flex flex-col text-white font-bold space-y-4">Work</p>
+        <ul>
+          <li>
+            <div class="text-gray-300 font-semi-bold">Freedom Technology Solutions Group</div>
+            <div class="text-gray-300 text-sm opacity-75">Software Enginer</div>
+            <div class="text-gray-300 text-sm opacity-75 pb-5">Jun 2022 - Present</div>
+            <article>
+              <p class="text-gray-300">
+                Currently I am a software engineer at Freedom Technology Solutions Group where we are on a government
+                contract with the Navy modernizing a legacy web application.
+              </p>
+            </article>
+          </li>
+        </ul>
+      </div>
     </section>
   </template>
   
@@ -110,10 +126,10 @@
     color: aliceblue;
   } */
   
-  p {
+  /* p {
     line-height: 1.6;
     margin-bottom: 1rem;
-    color: aliceblue;
-  }
+    color: rgb(187, 199, 209);
+  } */
   </style>
   

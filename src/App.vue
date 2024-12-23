@@ -21,6 +21,12 @@
     <footer class="text-white py-4 mt-auto">
       <div class="max-w-screen-md mx-auto text-left">
         <p>&copy; 2024 | Sodiq Odeyale</p>
+        <a href="https://www.linkedin.com/in/abdul-sodiq-odeyale/" target="_blank" class="hover:text-blue-500">
+          <i class="devicon-linkedin-plain pr-2 transition-colors duration-500 ease-in-out"></i>
+        </a>
+        <a href="https://github.com/SodiqSWE" target="_blank" class="hover:text-blue-500">
+          <i class="devicon-github-original pr-2 transition-colors duration-500 ease-in-out"></i>
+        </a>
       </div>
     </footer>
   </div>
