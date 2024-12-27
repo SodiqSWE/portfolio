@@ -6,8 +6,8 @@
       <div class="text-white text-left font-bold">Sodiq Odeyale</div>
       <div class="text-white text-left font-bold pb-4">Software Engineer</div>
       <p class="text-gray-300">
-        Hi, I'm Sodiq! A software developer with 2+ years of experience creating scalable solutions, 
-        from building APIs, ETL tools and CRUD systems, to designing frontends with Javascript frameworks like Vue.js and React. 
+        Hi, I'm Sodiq! A software developer with 4+ years of experience creating scalable solutions, 
+        from building backend APIs, ETL tools and CRUD systems, to designing frontends with Javascript frameworks like Vue.js and React. 
         I enjoy collaborating with a team and exploring new tech in my personal projects. 
         Outside of work, I’m into gaming, cars, and PC building, which keeps my creativity and problem-solving skills sharp.
       </p>
@@ -87,14 +87,24 @@
       <div>
         <p class="flex flex-col text-white font-bold space-y-4">Work</p>
         <ul>
-          <li>
-            <div class="text-gray-300 font-semi-bold">Freedom Technology Solutions Group</div>
+          <li class="pb-5">
+            <div class="text-gray-300 font-semi-bold">Freedom Technology Solutions Group, LLC</div>
             <div class="text-gray-300 text-sm opacity-75">Software Enginer</div>
             <div class="text-gray-300 text-sm opacity-75 pb-5">Jun 2022 - Present</div>
             <article>
               <p class="text-gray-300">
                 Currently I am a software engineer at Freedom Technology Solutions Group where we are on a government
                 contract with the Navy modernizing a legacy web application.
+              </p>
+            </article>
+          </li>
+          <li>
+            <div class="text-gray-300 font-semi-bold">NetImpact Strategies Inc.</div>
+            <div class="text-gray-300 text-sm opacity-75">IT Specialist</div>
+            <div class="text-gray-300 text-sm opacity-75 pb-5">Feb 2021 - Jun 2022</div>
+            <article>
+              <p class="text-gray-300">
+                Assisted Federal employees with IT related problems such as software installations, Troubleshooting (Windows, Mac OS, IOS, etc.)
               </p>
             </article>
           </li>
