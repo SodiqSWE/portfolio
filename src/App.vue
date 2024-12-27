@@ -6,8 +6,8 @@
         <ul class="flex space-x-4">
           <li><router-link to="/" class="text-white transition-colors duration-500 ease-in-out">Home</router-link></li>
           <!-- <li><router-link to="/about" class="hover:text-white transition-colors duration-500 ease-in-out">About</router-link></li> -->
+          <li><router-link to="/work" class="text-white transition-colors duration-500 ease-in-out">Work</router-link></li>
           <li><router-link to="/projects" class="text-white transition-colors duration-500 ease-in-out">Projects</router-link></li>
-          <li><router-link to="/contact" class="text-white transition-colors duration-500 ease-in-out">Contact</router-link></li>
         </ul>
       </nav>
     </header>

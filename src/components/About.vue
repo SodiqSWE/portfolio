@@ -85,7 +85,10 @@
         </ul>
       </div>
       <div>
-        <p class="flex flex-col text-white font-bold space-y-4">Work</p>
+        <div class="flex flex-wrap items-center gap-y-2 justify-between pb-5">
+          <p class="text-white font-bold space-y-4">Work</p>
+          <router-link to="/work" class="text-gray-300 transition-colors duration-500 ease-in-out hover:text-white">See All Work</router-link>
+        </div>
         <ul>
           <li class="pb-5">
             <div class="text-gray-300 font-semi-bold">Freedom Technology Solutions Group, LLC</div>
@@ -93,7 +96,7 @@
             <div class="text-gray-300 text-sm opacity-75 pb-5">Jun 2022 - Present</div>
             <article>
               <p class="text-gray-300">
-                Currently I am a software engineer at Freedom Technology Solutions Group where we are on a government
+                Currently I am a FullStack software engineer at Freedom Technology Solutions Group where we are on a classified TS government
                 contract with the Navy modernizing a legacy web application.
               </p>
             </article>
@@ -104,7 +107,7 @@
             <div class="text-gray-300 text-sm opacity-75 pb-5">Feb 2021 - Jun 2022</div>
             <article>
               <p class="text-gray-300">
-                Assisted Federal employees with IT related problems such as software installations, Troubleshooting (Windows, Mac OS, IOS, etc.)
+                Assisted Federal employees with IT related problems such as software installations, hardware and software (Windows, Mac OS, IOS, etc.) troubleshooting.
               </p>
             </article>
           </li>

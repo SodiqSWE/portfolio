@@ -1,12 +1,21 @@
 <template>
     <section class="projects">
-      <h1>My Projects</h1>
-      <div class="project-list">
-        <div v-for="(project, index) in projects" :key="index" class="project-card">
-          <h2>{{ project.name }}</h2>
-          <p>{{ project.description }}</p>
-          <a :href="project.link" target="_blank">View Project</a>
-        </div>
+      <div>
+        <p class="text-white font-bold space-y-4 pb-5">Projects</p>
+        <ul class="flex flex-col rounded-t-lg group-hover:bg-zinc-200 transition-colors duration-300 ease-in-out">
+          <li>
+            <a href="" target="_blank" class="block border-b border-zinc-200 border-opacity-60 py-4">
+              <p class="text-white group-hover:bg-zinc-200 transition-colors duration-300 ease-in-out">Project 1</p>
+              <p class="text-gray-300 text-sm">project description</p>
+            </a>
+          </li>
+          <li>
+            <a href="" target="_blank" class="block border-b border-zinc-200 border-opacity-60 py-4">
+              <p class="text-white">Project 2</p>
+              <p class="text-gray-300 text-sm">project description</p>
+            </a>
+          </li>
+        </ul>
       </div>
     </section>
   </template>
@@ -21,7 +30,7 @@
   
   <style scoped>
   .projects {
-    max-width: 900px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 1rem;
   }
