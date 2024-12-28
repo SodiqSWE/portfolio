@@ -3,7 +3,7 @@
       <div>
         <p class="text-white font-bold pb-5 px-4">Projects</p>
         <ul class="flex flex-col">
-          <li class="inset-4 hover:bg-gray-500 rounded-t-lg transition-colors duration-300 ease-in-out px-4">
+          <li class="inset-4 hover:bg-gray-600 rounded-t-lg transition-colors duration-300 ease-in-out px-4">
             <a href="" target="_blank" class="block border-b border-gray-300 hover:border-opacity-0 border-opacity-30 transition-colors duration-300 ease-in-out py-4">
               <p class="text-white">Database ETL Tool</p>
               <p class="text-gray-300 text-sm">
@@ -12,13 +12,13 @@
               </p>
             </a>
           </li>
-          <li class="hover:bg-gray-500 transition-colors duration-300 ease-in-out px-4">
+          <li class="hover:bg-gray-600 transition-colors duration-300 ease-in-out px-4">
             <a href="https://github.com/SodiqSWE/forkify-sodiq" target="_blank" class="block border-b border-gray-300 hover:border-opacity-0 border-opacity-30 transition-colors duration-300 ease-in-out py-4">
               <p class="text-white">JWT Middleware</p>
               <p class="text-gray-300 text-sm">A Python JWT middleware for a FastAPI based service.</p>
             </a>
           </li>
-          <li class="hover:bg-gray-500 transition-colors duration-300 ease-in-out px-4">
+          <li class="hover:bg-gray-600 transition-colors duration-300 ease-in-out px-4">
             <a href="https://github.com/SodiqSWE/forkify-sodiq" target="_blank" class="block border-b border-gray-300 hover:border-opacity-0 border-opacity-30 transition-colors duration-300 ease-in-out py-4">
               <p class="text-white">AWS Lambda SFTP function</p>
               <p class="text-gray-300 text-sm">
@@ -27,7 +27,7 @@
               </p>
             </a>
           </li>
-          <li class="hover:bg-gray-500 rounded-b-lg transition-colors duration-300 ease-in-out px-4">
+          <li class="hover:bg-gray-600 rounded-b-lg transition-colors duration-300 ease-in-out px-4">
             <a href="https://github.com/SodiqSWE/forkify-sodiq" target="_blank" class="block border-b border-gray-300 hover:border-opacity-0 border-opacity-30 transition-colors duration-300 ease-in-out py-4">
               <p class="text-white">Forkify</p>
               <p class="text-gray-300 text-sm">Javascript recipe app with cutom recipe upload capabilities.</p>
