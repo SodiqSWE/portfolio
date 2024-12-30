@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import About from '@/components/About.vue';
 import Projects from '@/components/Projects.vue';
-import Work from '@/components/work.vue';
+import Work from '@/components/Work.vue';
 
 declare module 'vue-router' {
   interface RouteMeta {
