@@ -51,17 +51,8 @@
   </template>
   
   <script setup lang="ts">
-  import { ref } from 'vue';
+ 
   
-  const formData = ref({
-    name: '',
-    email: '',
-    message: '',
-  });
-  
-  const handleSubmit = () => {
-    alert(`Thank you, ${formData.value.name}! Your message has been sent.`);
-  };
   </script>
   
   <style scoped>
