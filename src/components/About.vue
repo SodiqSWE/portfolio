@@ -142,11 +142,16 @@
           </li>
         </ul>
       </div>
+      <div>
+        <Steam />
+      </div>
     </section>
   </template>
   
   <script setup lang="ts">
-  // No logic needed for now
+  import Steam from './Steam.vue';
+  
+
   </script>
   
   <style scoped>

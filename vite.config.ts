@@ -12,4 +12,13 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'), // '@' points to the 'src' directory
     },
   },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://api.steampowered.com',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '') // Remove '/api' prefix
+      }
+    }
+  }
 });
