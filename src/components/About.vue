@@ -160,23 +160,5 @@
     margin: 0 auto;
     padding: 1rem;
   }
-  
-  /* h {
-    text-align: left;
-    margin-bottom: 1rem;
-    color: aliceblue;
-  } */
-
-  /* h1 {
-    text-align: center;
-    margin-bottom: 1rem;
-    color: aliceblue;
-  } */
-  
-  /* p {
-    line-height: 1.6;
-    margin-bottom: 1rem;
-    color: rgb(187, 199, 209);
-  } */
   </style>
   
