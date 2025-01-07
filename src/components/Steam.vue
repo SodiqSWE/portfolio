@@ -1,11 +1,13 @@
 <template>
     <div>
-        <h2 class="text-white font-semi-bold space-y-4 pb-5">Recently Played Games</h2>
+        <h2 class="text-white font-semi-bold space-y-4 pb-5">Recently Played</h2>
         <ul class="flex flex-row space-x-5">
-            <li v-for="game in games" :key="game.appid" class="pb-5">
-                <img :src="getGameImage(game.appid)" alt="Game Cover" class="rounded"/>
-                <p class="text-white">{{ game.name }} - {{ (game.playtime_forever / 60).toFixed(2) }} hours</p>
-                <p class="text-white">🏆 {{ game.achievements }} achievements</p>
+            <li v-for="game in games" :key="game.appid" class="pb-5 transition ease-in-out hover:-translate-y-2 duration-300">
+                <a :href="getGameLink(game.appid)" target="_blank">
+                    <img :src="getGameImage(game.appid)" alt="Game Cover" class="rounded"/>
+                </a>
+                <p class="text-sm text-white">{{ game.name }} - {{ (game.playtime_forever / 60).toFixed(2) }} hours</p>
+                <p class="text-sm text-white">🏆 {{ game.achievements }} achievements</p>
             </li>
         </ul>
     </div>
@@ -59,6 +61,7 @@ const fetchAchievements = async (appid) => {
 };
 
 const getGameImage = (appid) => `https://cdn.cloudflare.steamstatic.com/steam/apps/${appid}/header.jpg`;
+const getGameLink = (appid) => `https://store.steampowered.com/app/${appid}`;
 
 onMounted(fetchGames);
 </script>

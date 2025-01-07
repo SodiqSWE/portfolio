@@ -5,8 +5,8 @@
       </div>
       <div class="text-white text-left font-bold">Sodiq Odeyale</div>
       <div class="text-white text-left font-bold pb-4">Software Engineer</div>
-      <p class="text-gray-300">
-        Hi, I'm Sodiq! A software developer with 4+ years of experience creating scalable solutions, 
+      <p class="text-gray-300 pb-2">
+        Hi, I'm Sodiq! A software developer with 4+ years of professional experience creating scalable solutions, 
         from building backend APIs, ETL tools and CRUD systems, to designing frontends with Javascript frameworks like Vue.js and React. 
         I enjoy collaborating with a team and exploring new tech in my personal projects. 
         Outside of work, I’m into gaming, cars, and PC building, which keeps my creativity and problem-solving skills sharp.
