@@ -17,8 +17,10 @@
 import { ref, onMounted } from 'vue';
 
 const games = ref([]);
-const apiKey = import.meta.env.VITE_STEAM_API_KEY;
-const steamId = import.meta.env.VITE_STEAM_ID;
+const apiKey = process.env.STEAM_API_KEY;
+const steamId = process.env.STEAM_ID;
+// const apiKey = import.meta.env.VITE_STEAM_API_KEY;
+// const steamId = import.meta.env.VITE_STEAM_ID;
 
 const apiBaseUrl = import.meta.env.DEV 
   ? '/api' 
