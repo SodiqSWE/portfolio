@@ -4,6 +4,8 @@ exports.handler = async (event) => {
   const { path } = event;
   const apiUrl = `https://api.steampowered.com${path.replace('/.netlify/functions/steamProxy', '')}`;
 
+  console.log('API URL: ', apiUrl)
+
   try {
     const response = await fetch(apiUrl, {
       headers: {
@@ -17,9 +19,10 @@ exports.handler = async (event) => {
       body: JSON.stringify(data),
     };
   } catch (error) {
+    console.error('Error:', error);
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: 'Failed to fetch data' }),
+      body: JSON.stringify({ error: 'Failed to fetch data', details: error.message }),
     };
   }
 };
