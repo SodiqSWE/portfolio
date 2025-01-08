@@ -34,18 +34,26 @@ exports.handler = async (event) => {
         };
     }
 
+    // try {
+    //     const response = await fetch(fullApiUrl, {
+    //         headers: {
+    //             'Authorization': `Bearer ${steamApiKey}`
+    //         },
+    //     });
+
+    //     const responseBody = await response.text(); // Get raw response as text
+    //     console.log('Response Body:', responseBody);
+    //     const data = JSON.parse(responseBody);
+
+    //     // const data = await response.json();
+
+    //     return {
+    //         statusCode: 200,
+    //         body: JSON.stringify(data),
+    //     };
     try {
-        const response = await fetch(fullApiUrl, {
-            headers: {
-                'Authorization': `Bearer ${steamApiKey}`
-            },
-        });
-
-        const responseBody = await response.text(); // Get raw response as text
-        console.log('Response Body:', responseBody);
-        const data = JSON.parse(responseBody);
-
-        // const data = await response.json();
+        const response = await fetch(apiUrl);
+        const data = await response.json();
 
         return {
             statusCode: 200,
