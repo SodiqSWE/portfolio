@@ -2,13 +2,18 @@ import fetch from 'node-fetch';
 
 exports.handler = async (event) => {
     console.log('Event Path:', event.path);
-    const { path } = event;
-    const apiUrl = `https://api.steampowered.com${path.replace('/.netlify/functions/steamProxy', '')}`;
+    // const { path } = event;
 
-    console.log('API URL: ', apiUrl)
+    let apiUrl = event.path.replace('/.netlify/functions/steamProxy', '');
+    apiUrl = apiUrl.replace(/\/$/, ''); // Remove trailing slash
+    // const apiUrl = `https://api.steampowered.com${path.replace('/.netlify/functions/steamProxy', '')}`;
+
+    const fullApiUrl = `https://api.steampowered.com${apiUrl}`;
+
+    console.log('Constructed API URL:', fullApiUrl);
 
     try {
-        const response = await fetch(apiUrl, {
+        const response = await fetch(fullApiUrl, {
             headers: {
                 'Authorization': `Bearer ${process.env.STEAM_API_KEY}`
             },
