@@ -7,7 +7,7 @@ exports.handler = async (event) => {
   try {
     const response = await fetch(apiUrl, {
       headers: {
-        'Authorization': `Bearer ${process.env.VITE_STEAM_API_KEY}`
+        'Authorization': `Bearer ${process.env.STEAM_API_KEY}`
       },
     });
     const data = await response.json();
