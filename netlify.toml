@@ -1,2 +1,7 @@
 [build]
-  functions = "netlify/functions"
+  node_version = "16"
+
+[functions]
+  directory = "netlify/functions"
+  external_node_modules = ["node-fetch"]
+
