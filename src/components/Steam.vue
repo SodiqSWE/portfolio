@@ -20,9 +20,13 @@ const games = ref([]);
 const apiKey = import.meta.env.VITE_STEAM_API_KEY;
 const steamId = import.meta.env.VITE_STEAM_ID;
 
+const apiBaseUrl = import.meta.env.DEV 
+  ? '/api' 
+  : 'https://api.steampowered.com';
+
 const fetchGames = async () => {
     // Use the proxy path
-    const url = `/api/IPlayerService/GetRecentlyPlayedGames/v0001/?key=${apiKey}&steamid=${steamId}&format=json`;
+    const url = `${apiBaseUrl}/IPlayerService/GetRecentlyPlayedGames/v0001/?key=${apiKey}&steamid=${steamId}&format=json`;
 
     try {
         const response = await fetch(url);
@@ -47,7 +51,7 @@ const fetchGames = async () => {
 
 // Fetch achievements for a specific game
 const fetchAchievements = async (appid) => {
-  const url = `/api/ISteamUserStats/GetSchemaForGame/v2/?key=${apiKey}&appid=${appid}`;
+  const url = `${apiBaseUrl}/api/ISteamUserStats/GetSchemaForGame/v2/?key=${apiKey}&appid=${appid}`;
   try {
     const response = await fetch(url);
     const data = await response.json();
