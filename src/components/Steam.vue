@@ -22,7 +22,7 @@ const steamId = import.meta.env.VITE_STEAM_ID;
 
 const apiBaseUrl = import.meta.env.DEV 
   ? '/api' 
-  : 'https://api.steampowered.com';
+  : '/.netlify/functions/steamProxy';
 
 const fetchGames = async () => {
     // Use the proxy path
