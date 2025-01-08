@@ -2,18 +2,37 @@ import fetch from 'node-fetch';
 
 exports.handler = async (event) => {
     console.log('Event Path:', event.path);
-    // const { path } = event;
-
-    let apiUrl = event.path.replace('/.netlify/functions/steamProxy', '');
-    apiUrl = apiUrl.replace(/\/$/, ''); // Remove trailing slash
-    // const apiUrl = `https://api.steampowered.com${path.replace('/.netlify/functions/steamProxy', '')}`;
-
+    const { path } = event;
     const steamApiKey = process.env.STEAM_API_KEY;
     const steamId = process.env.STEAM_ID;
 
-    const fullApiUrl = `https://api.steampowered.com${apiUrl}?key=${steamApiKey}&steamid=${steamId}&format=json`;
+    // Log the event path for debugging
+    console.log('Event Path:', path);
 
-    console.log('Constructed API URL:', fullApiUrl);
+    // let apiUrl = event.path.replace('/.netlify/functions/steamProxy', '');
+    let apiUrl = '';
+    apiUrl = apiUrl.replace(/\/$/, ''); // Remove trailing slash
+
+
+    // const fullApiUrl = `https://api.steampowered.com${apiUrl}?key=${steamApiKey}&steamid=${steamId}&format=json`;
+
+    // console.log('Constructed API URL:', fullApiUrl);
+
+    if (path.includes('/GetRecentlyPlayedGames')) {
+        apiUrl = `https://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v0001/?key=${steamApiKey}&steamid=${steamId}&format=json`;
+    } else if (path.includes('/GetSchemaForGame')) {
+        // Extract the appid from the query parameters
+        const url = new URL(`https://dummy.com${path}`);
+        const appid = url.searchParams.get('appid');
+
+        // Construct the URL for the GetSchemaForGame endpoint
+        apiUrl = `https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${steamApiKey}&appid=${appid}`;
+    } else {
+        return {
+            statusCode: 400,
+            body: JSON.stringify({ error: 'Invalid endpoint' }),
+        };
+    }
 
     try {
         const response = await fetch(fullApiUrl, {
