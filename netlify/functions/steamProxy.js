@@ -27,6 +27,7 @@ exports.handler = async (event) => {
         url.searchParams.set('key', process.env.STEAM_API_KEY);
         console.log('Constructed URL with Key:', url.toString()); // Check if the key is included
         const appid = url.searchParams.get('appid');
+        console.log('App ID:', appid)
 
         // Construct the URL for the GetSchemaForGame endpoint
         apiUrl = `https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${steamApiKey}&appid=${appid}`;
