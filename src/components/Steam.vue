@@ -59,6 +59,7 @@ const fetchAchievements = async (appid) => {
 
     console.log('Response Status:', response.status);
     console.log('Response Headers:', [...response.headers]);
+    console.log('Response Body:', response.body);
 
     const data = await response.json();
 
