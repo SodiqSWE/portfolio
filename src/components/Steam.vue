@@ -57,6 +57,7 @@ const fetchAchievements = async (appid) => {
   try {
     const response = await fetch(url);
     const data = await response.json();
+    console.log('Full API Response:', data); // Log the entire response for debugging
     const totalAchievements =
       data?.game?.availableGameStats?.achievements?.length || 0;
     return totalAchievements;
