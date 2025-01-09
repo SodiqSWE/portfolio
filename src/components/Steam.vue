@@ -55,11 +55,19 @@ const fetchGames = async () => {
 const fetchAchievements = async (appid) => {
   const url = `${apiBaseUrl}/api/ISteamUserStats/GetSchemaForGame/v2/?key=${apiKey}&appid=${appid}`;
   try {
+    console.log('Fetching achievements for appid:', appid);
+    console.log('Constructed URL:', url);
+
     const response = await fetch(url);
 
     console.log('Response Status:', response.status);
     console.log('Response Headers:', [...response.headers]);
     console.log('Response Body:', response.body);
+
+    if (!response.ok) {
+      console.error(`API call failed with status ${response.status}`);
+      return 0;
+    };
 
     const data = await response.json();
 
