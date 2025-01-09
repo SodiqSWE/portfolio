@@ -1,6 +1,7 @@
 import fetch from 'node-fetch';
 
 exports.handler = async (event) => {
+    console.log('API Key:', process.env.STEAM_API_KEY);
     console.log('Event Path:', event.path);
     const { path } = event;
     const steamApiKey = process.env.STEAM_API_KEY;
@@ -23,6 +24,8 @@ exports.handler = async (event) => {
     } else if (path.includes('/GetSchemaForGame')) {
         // Extract the appid from the query parameters
         const url = new URL(`https://dummy.com${path}`);
+        url.searchParams.set('key', process.env.STEAM_API_KEY);
+        console.log('Constructed URL with Key:', url.toString()); // Check if the key is included
         const appid = url.searchParams.get('appid');
 
         // Construct the URL for the GetSchemaForGame endpoint
@@ -53,6 +56,9 @@ exports.handler = async (event) => {
     //     };
     try {
         const response = await fetch(apiUrl);
+
+        console.log('Response Details:', response);
+
         const data = await response.json();
 
         return {
