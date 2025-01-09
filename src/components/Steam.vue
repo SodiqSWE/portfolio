@@ -56,8 +56,14 @@ const fetchAchievements = async (appid) => {
   const url = `${apiBaseUrl}/api/ISteamUserStats/GetSchemaForGame/v2/?key=${apiKey}&appid=${appid}`;
   try {
     const response = await fetch(url);
+
+    console.log('Response Status:', response.status);
+    console.log('Response Headers:', [...response.headers]);
+
     const data = await response.json();
-    console.log('Full API Response:', data); // Log the entire response for debugging
+
+    console.log('Full API Response:', data); // Log the full response to debug
+
     const totalAchievements =
       data?.game?.availableGameStats?.achievements?.length || 0;
     return totalAchievements;
