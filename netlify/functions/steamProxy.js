@@ -10,34 +10,55 @@ exports.handler = async (event) => {
     // Log the event path for debugging
     console.log('Event Path:', path);
 
-    // let apiUrl = event.path.replace('/.netlify/functions/steamProxy', '');
     let apiUrl = '';
-    apiUrl = apiUrl.replace(/\/$/, ''); // Remove trailing slash
-
-
-    // const fullApiUrl = `https://api.steampowered.com${apiUrl}?key=${steamApiKey}&steamid=${steamId}&format=json`;
-
-    // console.log('Constructed API URL:', fullApiUrl);
+    // apiUrl = apiUrl.replace(/\/$/, ''); // Remove trailing slash
 
     if (path.includes('/GetRecentlyPlayedGames')) {
         apiUrl = `https://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v0001/?key=${steamApiKey}&steamid=${steamId}&format=json`;
     } else if (path.includes('/GetSchemaForGame')) {
         const recentlyPlayedUrl = `https://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v0001/?key=${steamApiKey}&steamid=${steamId}&format=json`
-        const response = await fetch(recentlyPlayedUrl);
-        const data = await response.json();
-        const gameList = (data.response.games || []).slice(0, 2); // Grabbing only two games
 
-        const appid = gameList[0].appid
+        try {
+            const response = await fetch(recentlyPlayedUrl);
+            const data = await response.json();
+            const gameList = (data.response.games || []).slice(0, 2);
 
-        // Extract the appid from the query parameters
-        // const url = new URL(`https://dummy.com${path}`);
-        // url.searchParams.set('key', process.env.STEAM_API_KEY);
-        // console.log('Constructed URL with Key:', url.toString()); // Check if the key is included
-        // const appid = url.searchParams.get('appid');
-        console.log('App ID:', appid)
+            const achievementUrls = gameList.map(game => {
+                const appid = game.appid;
+                return `https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${steamApiKey}&appid=${appid}`;
+            });
 
-        // Construct the URL for the GetSchemaForGame endpoint
-        apiUrl = `https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${steamApiKey}&appid=${appid}`;
+            console.log('Achievement URLs:', achievementUrls);
+
+            const achievementResponses = await Promise.all(achievementUrls.map(url => fetch(url)));
+            const achievementsData = await Promise.all(achievementResponses.map(res => res.json()));
+
+            return {
+                statusCode: 200,
+                body: JSON.stringify(achievementsData),
+            };
+        } catch (error) {
+            console.error('Error fetching achievements:', error);
+            return {
+                statusCode: 500,
+                body: JSON.stringify({ error: 'Failed to fetch achievements', details: error.message }),
+            };
+        }
+        // const response = await fetch(recentlyPlayedUrl);
+        // const data = await response.json();
+        // const gameList = (data.response.games || []).slice(0, 2); // Grabbing only two games
+
+        // // const appid = gameList[0].appid
+
+        // const achievementUrls = gameList.map(game => {
+        //     const appid = game.appid;
+        //     return `https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${steamApiKey}&appid=${appid}`;
+        // });
+
+        // console.log('App ID:', appid)
+
+        // // Construct the URL for the GetSchemaForGame endpoint
+        // apiUrl = `https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${steamApiKey}&appid=${appid}`;
     } else {
         return {
             statusCode: 400,
@@ -45,28 +66,8 @@ exports.handler = async (event) => {
         };
     }
 
-    // try {
-    //     const response = await fetch(fullApiUrl, {
-    //         headers: {
-    //             'Authorization': `Bearer ${steamApiKey}`
-    //         },
-    //     });
-
-    //     const responseBody = await response.text(); // Get raw response as text
-    //     console.log('Response Body:', responseBody);
-    //     const data = JSON.parse(responseBody);
-
-    //     // const data = await response.json();
-
-    //     return {
-    //         statusCode: 200,
-    //         body: JSON.stringify(data),
-    //     };
     try {
         const response = await fetch(apiUrl);
-
-        console.log('Response Details:', response);
-
         const data = await response.json();
 
         return {
