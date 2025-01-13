@@ -30,7 +30,7 @@ const apiBaseUrl = import.meta.env.DEV
 const fetchGames = async () => {
     // Use the proxy path
     const url = `${apiBaseUrl}/IPlayerService/GetRecentlyPlayedGames/v0001/?key=${apiKey}&steamid=${steamId}&format=json`;
-
+    console.log('Loaded steam API key in fetchGames:', apiKey)
     try {
         const response = await fetch(url);
         const data = await response.json();
@@ -59,7 +59,7 @@ const fetchAchievements = async (appid) => {
     try {
         console.log('Fetching achievements for appid:', appid);
         console.log('Constructed URL:', url);
-        console.log('Loaded steam API key:', apiKey)
+        console.log('Loaded steam API key in fetchAchievments:', apiKey)
 
         const response = await fetch(url);
 
