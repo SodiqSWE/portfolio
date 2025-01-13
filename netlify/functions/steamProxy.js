@@ -24,7 +24,7 @@ exports.handler = async (event) => {
     } else if (path.includes('/GetSchemaForGame')) {
         // Extract the appid from the query parameters
         const url = new URL(`https://dummy.com${path}`);
-        url.searchParams.set('key', process.env.STEAM_API_KEY);
+        // url.searchParams.set('key', process.env.STEAM_API_KEY);
         console.log('Constructed URL with Key:', url.toString()); // Check if the key is included
         const appid = url.searchParams.get('appid');
         console.log('App ID:', appid)
