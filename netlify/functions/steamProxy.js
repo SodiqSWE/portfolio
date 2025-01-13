@@ -22,11 +22,18 @@ exports.handler = async (event) => {
     if (path.includes('/GetRecentlyPlayedGames')) {
         apiUrl = `https://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v0001/?key=${steamApiKey}&steamid=${steamId}&format=json`;
     } else if (path.includes('/GetSchemaForGame')) {
+        const recentlyPlayedUrl = `https://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v0001/?key=${steamApiKey}&steamid=${steamId}&format=json`
+        const response = await fetch(recentlyPlayedUrl);
+        const data = await response.json();
+        const gameList = (data.response.games || []).slice(0, 2); // Grabbing only two games
+
+        const appid = gameList[0].appid
+
         // Extract the appid from the query parameters
-        const url = new URL(`https://dummy.com${path}`);
+        // const url = new URL(`https://dummy.com${path}`);
         // url.searchParams.set('key', process.env.STEAM_API_KEY);
-        console.log('Constructed URL with Key:', url.toString()); // Check if the key is included
-        const appid = url.searchParams.get('appid');
+        // console.log('Constructed URL with Key:', url.toString()); // Check if the key is included
+        // const appid = url.searchParams.get('appid');
         console.log('App ID:', appid)
 
         // Construct the URL for the GetSchemaForGame endpoint
