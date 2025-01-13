@@ -59,6 +59,7 @@ const fetchAchievements = async (appid) => {
     try {
         console.log('Fetching achievements for appid:', appid);
         console.log('Constructed URL:', url);
+        console.log('Loaded steam API key:', apiKey)
 
         const response = await fetch(url);
 
