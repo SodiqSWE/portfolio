@@ -55,7 +55,8 @@ const fetchGames = async () => {
 // Fetch achievements for a specific game
 const fetchAchievements = async (appid) => {
     console.log('Fetching achievements for appid:', appid); // Log appid to ensure it's not null or undefined
-    const url = `${apiBaseUrl}/api/ISteamUserStats/GetSchemaForGame/v2/?key=${apiKey}&appid=${appid}`;
+    // const url = `${apiBaseUrl}/api/ISteamUserStats/GetSchemaForGame/v2/?key=${apiKey}&appid=${appid}`;
+    const url = `${apiBaseUrl}/ISteamUserStats/GetPlayerAchievements/v0001/?appid=${appid}&key=${steamApiKey}&steamid=${steamId}`;
     try {
         console.log('Fetching achievements for appid:', appid);
         console.log('Constructed URL:', url);

@@ -27,7 +27,8 @@ exports.handler = async (event) => {
 
             const achievementUrls = gameList.map(game => {
                 const appid = game.appid;
-                return `https://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${steamApiKey}&appid=${appid}`;
+                // return `http://api.steampowered.com/ISteamUserStats/GetSchemaForGame/v2/?key=${steamApiKey}&appid=${appid}`;
+                return `https://api.steampowered.com/ISteamUserStats/GetPlayerAchievements/v0001/?appid=${appid}&key=${steamApiKey}&steamid=${steamId}`;
             });
 
             console.log('Achievement URLs:', achievementUrls);
