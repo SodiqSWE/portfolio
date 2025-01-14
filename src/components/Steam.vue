@@ -18,10 +18,10 @@
 import { ref, onMounted } from 'vue';
 
 const games = ref([]);
-const apiKey = process.env.STEAM_API_KEY;
-const steamId = process.env.STEAM_ID;
-// const apiKey = import.meta.env.VITE_STEAM_API_KEY;
-// const steamId = import.meta.env.VITE_STEAM_ID;
+// const apiKey = process.env.STEAM_API_KEY;
+// const steamId = process.env.STEAM_ID;
+const apiKey = import.meta.env.VITE_STEAM_API_KEY;
+const steamId = import.meta.env.VITE_STEAM_ID;
 
 const apiBaseUrl = import.meta.env.DEV
     ? '/api'
@@ -50,74 +50,40 @@ const fetchGames = async () => {
     } catch (error) {
         console.error('Error fetching games:', error);
     }
-
-
-    // Fetch achievements for a specific game
-    const fetchAchievements = async (appid) => {
-        console.log('Fetching achievements for appid:', appid); // Log appid to ensure it's not null or undefined
-        const url = `${apiBaseUrl}/api/ISteamUserStats/GetSchemaForGame/v2/?key=${apiKey}&appid=${appid}`;
-        try {
-            console.log('Fetching achievements for appid:', appid);
-            console.log('Constructed URL:', url);
-            console.log('Loaded steam API key in fetchAchievments:', apiKey)
-
-            const response = await fetch(url);
-
-            console.log('Response Status:', response.status);
-            console.log('Response Headers:', [...response.headers]);
-            console.log('Response Body:', response.body);
-
-            if (!response.ok) {
-                console.error(`API call failed with status ${response.status}`);
-                return 0;
-            };
-
-            const data = await response.json();
-
-            console.log('Full API Response:', data); // Log the full response to debug
-
-            const totalAchievements =
-                data?.game?.availableGameStats?.achievements?.length || 0;
-            return totalAchievements;
-        } catch (error) {
-            console.error(`Error fetching achievements for appid ${appid}:`, error);
-            return 0; // Default to 0 if there's an error
-        }
-    };
 };
 
-// // Fetch achievements for a specific game
-// const fetchAchievements = async (appid) => {
-//     console.log('Fetching achievements for appid:', appid); // Log appid to ensure it's not null or undefined
-//     const url = `${apiBaseUrl}/api/ISteamUserStats/GetSchemaForGame/v2/?key=${apiKey}&appid=${appid}`;
-//     try {
-//         console.log('Fetching achievements for appid:', appid);
-//         console.log('Constructed URL:', url);
-//         console.log('Loaded steam API key in fetchAchievments:', apiKey)
+// Fetch achievements for a specific game
+const fetchAchievements = async (appid) => {
+    console.log('Fetching achievements for appid:', appid); // Log appid to ensure it's not null or undefined
+    const url = `${apiBaseUrl}/api/ISteamUserStats/GetSchemaForGame/v2/?key=${apiKey}&appid=${appid}`;
+    try {
+        console.log('Fetching achievements for appid:', appid);
+        console.log('Constructed URL:', url);
+        console.log('Loaded steam API key in fetchAchievments:', apiKey)
 
-//         const response = await fetch(url);
+        const response = await fetch(url);
 
-//         console.log('Response Status:', response.status);
-//         console.log('Response Headers:', [...response.headers]);
-//         console.log('Response Body:', response.body);
+        console.log('Response Status:', response.status);
+        console.log('Response Headers:', [...response.headers]);
+        console.log('Response Body:', response.body);
 
-//         if (!response.ok) {
-//             console.error(`API call failed with status ${response.status}`);
-//             return 0;
-//         };
+        if (!response.ok) {
+            console.error(`API call failed with status ${response.status}`);
+            return 0;
+        };
 
-//         const data = await response.json();
+        const data = await response.json();
 
-//         console.log('Full API Response:', data); // Log the full response to debug
+        console.log('Full API Response:', data); // Log the full response to debug
 
-//         const totalAchievements =
-//             data?.game?.availableGameStats?.achievements?.length || 0;
-//         return totalAchievements;
-//     } catch (error) {
-//         console.error(`Error fetching achievements for appid ${appid}:`, error);
-//         return 0; // Default to 0 if there's an error
-//     }
-// };
+        const totalAchievements =
+            data?.game?.availableGameStats?.achievements?.length || 0;
+        return totalAchievements;
+    } catch (error) {
+        console.error(`Error fetching achievements for appid ${appid}:`, error);
+        return 0; // Default to 0 if there's an error
+    }
+};
 
 const getGameImage = (appid) => `https://cdn.cloudflare.steamstatic.com/steam/apps/${appid}/header.jpg`;
 const getGameLink = (appid) => `https://store.steampowered.com/app/${appid}`;
