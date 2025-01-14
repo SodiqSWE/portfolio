@@ -4,8 +4,10 @@ exports.handler = async (event) => {
     console.log('API Key:', process.env.STEAM_API_KEY);
     console.log('Event Path:', event.path);
     const { path } = event;
-    const steamApiKey = process.env.STEAM_API_KEY;
-    const steamId = process.env.STEAM_ID;
+    // const steamApiKey = process.env.STEAM_API_KEY;
+    // const steamId = process.env.STEAM_ID;
+    const steamApiKey = import.meta.env.VITE_STEAM_API_KEY;
+    const steamId = import.meta.env.VITE_STEAM_ID;
 
     // Log the event path for debugging
     console.log('Event Path:', path);
