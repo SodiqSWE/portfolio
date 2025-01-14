@@ -35,7 +35,7 @@ const fetchGames = async () => {
         const data = await response.json();
         // const gameList = data.response.games || [];
         // const gameList = (data.response.games || []).slice(0, 2); // Grabbing only two games
-        const games = (data.response.games || []).slice(0, 2); // Grabbing only two games
+        const gamesList = (data.response.games || []).slice(0, 2); // Grabbing only two games
         // Add achievements data for each game
         // const gamesWithAchievements = await Promise.all(
         //     gameList.map(async (game) => {
@@ -47,6 +47,7 @@ const fetchGames = async () => {
         //     })
         // );
         // games.value = gamesWithAchievements;
+        games.value = gamesList
     } catch (error) {
         console.error('Error fetching games:', error);
     }
