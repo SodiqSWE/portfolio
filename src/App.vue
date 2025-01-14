@@ -4,10 +4,10 @@
     <header class="fixed top-0 w-full backdrop-blur-sm bg-gradient-to-b from-black-100 bg-opacity-50 bg-gray-950 z-50 py-2 m-0">
       <nav class=" mx-auto px-4 py-2 flex justify-center">
         <ul class="flex space-x-4">
-          <li><router-link to="/" class="text-white transition-colors duration-500 ease-in-out">Home</router-link></li>
+          <li><router-link to="/" class="text-white transition-colors duration-500 ease-in-out hover:text-gray-300">Home</router-link></li>
           <!-- <li><router-link to="/about" class="hover:text-white transition-colors duration-500 ease-in-out">About</router-link></li> -->
-          <li><router-link to="/work" class="text-white transition-colors duration-500 ease-in-out">Work</router-link></li>
-          <li><router-link to="/projects" class="text-white transition-colors duration-500 ease-in-out">Projects</router-link></li>
+          <li><router-link to="/work" class="text-white transition-colors duration-500 ease-in-out hover:text-gray-300">Work</router-link></li>
+          <li><router-link to="/projects" class="text-white transition-colors duration-500 ease-in-out hover:text-gray-300">Projects</router-link></li>
         </ul>
       </nav>
     </header>

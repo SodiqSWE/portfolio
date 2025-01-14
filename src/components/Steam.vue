@@ -5,7 +5,7 @@
             <li v-for="game in games" :key="game.appid"
                 class="pb-5 transition ease-in-out hover:-translate-y-2 duration-300">
                 <a :href="getGameLink(game.appid)" target="_blank">
-                    <img :src="getGameImage(game.appid)" alt="Game Cover" class="rounded" />
+                    <img :src="getGameImage(game.appid)" alt="Game Cover" class="rounded pb-0.5" />
                 </a>
                 <p class="text-sm text-white">{{ game.name }} - 🕝 {{ (game.playtime_forever / 60).toFixed(2) }} hours</p>
                 <!-- <p class="text-sm text-white">🏆 {{ game.achievements }} achievements</p> -->
@@ -33,8 +33,6 @@ const fetchGames = async () => {
     try {
         const response = await fetch(url);
         const data = await response.json();
-        // const gameList = data.response.games || [];
-        // const gameList = (data.response.games || []).slice(0, 2); // Grabbing only two games
         const gamesList = (data.response.games || []).slice(0, 2); // Grabbing only two games
         // Add achievements data for each game
         // const gamesWithAchievements = await Promise.all(

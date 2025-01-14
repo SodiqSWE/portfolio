@@ -23,7 +23,7 @@ export default defineConfig({
   },
   define: {
     'process.env': {
-      // VITE_STEAM_API_KEY: process.env.VITE_STEAM_API_KEY,
+      VITE_STEAM_API_KEY: process.env.VITE_STEAM_API_KEY,
       VITE_STEAM_ID: process.env.VITE_STEAM_ID
     },
   },
