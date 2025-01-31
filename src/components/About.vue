@@ -6,7 +6,7 @@
       <div class="text-white text-left font-bold">Sodiq Odeyale</div>
       <div class="text-white text-left font-bold pb-4">Software Engineer</div>
       <p class="text-gray-300 pb-2">
-        Hi, I'm Sodiq! A software developer with 4+ years of professional experience creating scalable solutions, 
+        Hi, I'm Sodiq! A FullStack Software Engineer with 4+ years of professional experience creating and developing scalable solutions, 
         from building backend APIs, ETL tools and CRUD systems, to designing frontends with Javascript frameworks like Vue.js and React. 
         I enjoy collaborating with a team and exploring new tech in my personal projects. 
         Outside of work, I’m into gaming, cars, and PC building, which keeps my creativity and problem-solving skills sharp.
@@ -96,8 +96,8 @@
             <div class="text-gray-300 text-sm opacity-75 pb-5">Jun 2022 - Present</div>
             <article>
               <p class="text-gray-300">
-                Currently I am a FullStack software engineer at Freedom Technology Solutions Group where we are on a classified TS government
-                contract with the Navy modernizing a legacy web application.
+                Currently I am a FullStack Software Engineer at Freedom Technology Solutions Group where we are on a classified TS government
+                contract with the Navy modernizing a legacy application from the ground up.
               </p>
             </article>
           </li>

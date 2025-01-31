@@ -11,8 +11,8 @@
             <div class="text-gray-300 text-sm opacity-75 pb-5">Jun 2022 - Present</div>
             <article>
               <p class="text-gray-300 opacity-90">
-                Currently I am a FullStack software engineer at Freedom Technology Solutions Group where we are on a classified TS government
-                contract with the Navy modernizing a legacy web application.
+                Currently I am a FullStack Software Engineer at Freedom Technology Solutions Group where we are on a classified TS government
+                contract with the Navy modernizing a legacy application from the ground up.
                 <br>
                 <br>
                 &#10022; Built an ETL (Extract Transform Load) tool for extracting and transforming data from an old Oracle
