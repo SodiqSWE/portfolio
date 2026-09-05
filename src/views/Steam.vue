@@ -1,21 +1,5 @@
-<template>
-    <div>
-        <h2 class="text-white font-semi-bold space-y-4 pb-5">Recently Played</h2>
-        <ul class="flex flex-row space-x-5">
-            <li v-for="game in games" :key="game.appid"
-                class="pb-5 transition ease-in-out hover:-translate-y-2 duration-300">
-                <a :href="getGameLink(game.appid)" target="_blank">
-                    <img :src="getGameImage(game.appid)" alt="Game Cover" class="rounded pb-0.5" />
-                </a>
-                <p class="text-sm text-white">{{ game.name }} - 🕝 {{ (game.playtime_forever / 60).toFixed(2) }} hours</p>
-                <!-- <p class="text-sm text-white">🏆 {{ game.achievements }} achievements</p> -->
-            </li>
-        </ul>
-    </div>
-</template>
-
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted } from "vue";
 
 const games = ref([]);
 // const apiKey = process.env.STEAM_API_KEY;
@@ -24,31 +8,31 @@ const apiKey = import.meta.env.VITE_STEAM_API_KEY;
 const steamId = import.meta.env.VITE_STEAM_ID;
 
 const apiBaseUrl = import.meta.env.DEV
-    ? '/api'
-    : '/.netlify/functions/steamProxy';
+  ? "/api"
+  : "/.netlify/functions/steamProxy";
 
 const fetchGames = async () => {
-    // Use the proxy path
-    const url = `${apiBaseUrl}/IPlayerService/GetRecentlyPlayedGames/v0001/?key=${apiKey}&steamid=${steamId}&format=json`;
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
-        const gamesList = (data.response.games || []).slice(0, 2); // Grabbing only two games
-        // Add achievements data for each game
-        // const gamesWithAchievements = await Promise.all(
-        //     gameList.map(async (game) => {
-        //         const achievements = await fetchAchievements(game.appid);
-        //         return {
-        //             ...game,
-        //             achievements,
-        //         };
-        //     })
-        // );
-        // games.value = gamesWithAchievements;
-        games.value = gamesList
-    } catch (error) {
-        console.error('Error fetching games:', error);
-    }
+  // Use the proxy path
+  const url = `${apiBaseUrl}/IPlayerService/GetRecentlyPlayedGames/v0001/?key=${apiKey}&steamid=${steamId}&format=json`;
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    const gamesList = (data.response.games || []).slice(0, 2); // Grabbing only two games
+    // Add achievements data for each game
+    // const gamesWithAchievements = await Promise.all(
+    //     gameList.map(async (game) => {
+    //         const achievements = await fetchAchievements(game.appid);
+    //         return {
+    //             ...game,
+    //             achievements,
+    //         };
+    //     })
+    // );
+    // games.value = gamesWithAchievements;
+    games.value = gamesList;
+  } catch (error) {
+    console.error("Error fetching games:", error);
+  }
 };
 
 // Fetch achievements for a specific game
@@ -85,8 +69,35 @@ const fetchGames = async () => {
 //     }
 // };
 
-const getGameImage = (appid) => `https://cdn.cloudflare.steamstatic.com/steam/apps/${appid}/header.jpg`;
+const getGameImage = (appid) =>
+  `https://cdn.cloudflare.steamstatic.com/steam/apps/${appid}/header.jpg`;
 const getGameLink = (appid) => `https://store.steampowered.com/app/${appid}`;
 
 onMounted(fetchGames);
 </script>
+
+<template>
+  <div>
+    <h2 class="text-white font-semi-bold space-y-4 pb-5">Recently Played</h2>
+    <ul class="flex flex-row space-x-5">
+      <li
+        v-for="game in games"
+        :key="game.appid"
+        class="pb-5 transition ease-in-out hover:-translate-y-2 duration-300"
+      >
+        <a :href="getGameLink(game.appid)" target="_blank">
+          <img
+            :src="getGameImage(game.appid)"
+            alt="Game Cover"
+            class="rounded pb-0.5"
+          />
+        </a>
+        <p class="text-sm text-white">
+          {{ game.name }} - 🕝
+          {{ (game.playtime_forever / 60).toFixed(2) }} hours
+        </p>
+        <!-- <p class="text-sm text-white">🏆 {{ game.achievements }} achievements</p> -->
+      </li>
+    </ul>
+  </div>
+</template>

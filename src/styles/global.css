@@ -1,12 +1,40 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../../tailwind.config.js";
+/* @import "tailwind-animations"; */
 
+.home {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+@theme {
+  /* Carousel */
+  --animate-scroll: infinite-scroll 25s linear infinite;
+
+  @keyframes infinite-scroll {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  /* Terminal Cursor */
+  --animate-cursor-blink: cursor-blink 1s step-end infinite;
+
+  @keyframes cursor-blink {
+    50% {
+      opacity: 0;
+    }
+  }
+}
 /* To check the border of all element */
 /* * {
   outline: 1px solid red;
 } */
-
 
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
