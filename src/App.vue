@@ -5,11 +5,10 @@
 <template>
   <div class="flex flex-col min-h-screen">
     <!-- Glass Header  -->
-    <header
-      class="fixed top-0 z-50 m-0 w-full bg-linear-to-b from-black/80 to-gray-950/50 py-2 backdrop-blur-sm"
-    >
+    <header class="fixed top-0 z-50 w-full">
+      <div class="header-glass pointer-events-none"></div>
       <!-- Nav Bar -->
-      <nav class="mx-auto px-4 py-2 flex justify-center">
+      <nav class="relative mx-auto px-4 py-2 flex justify-center">
         <ul class="flex space-x-4">
           <li>
             <router-link

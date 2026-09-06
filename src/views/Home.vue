@@ -63,25 +63,31 @@ onUnmounted(() => {
     <div class="pt-8 pb-15">
       <h1 class="text-gray-500 font-bold text-4xl">
         Hey my name is <span class="text-white">Sodiq</span>!
+        <!-- <div class="relative">
+          <span class="absolute left-[0.5] top-1 text-yellow-500"> Sodiq </span>
+          <span class="relative text-white"> Sodiq </span>
+        </div> -->
       </h1>
       <p class="text-white font-bold text-4xl">
         <span class="text-gray-500">and I'm</span> > {{ displayedText
         }}<TypingCursorEditor />
       </p>
     </div>
-    <p class="text-gray-300 pb-2">
-      I'm a FullStack Software Engineer with 5+ years of professional experience
-      creating and developing end to end scalable solutions, from building
-      backend APIs, DB ETL tools and CRUD systems, to designing frontend
-      experiences with Javascript frameworks like Vue.js and React. I enjoy
-      collaborating with a team and exploring new tech in my personal projects.
-      Outside of work, I’m into gaming, cars, PC building, art, and books which
-      keeps my creativity and problem-solving skills sharp.
+    <p class="text-gray-300 pb-15">
+      I'm a Full-Stack Software Engineer with 5+ years of professional
+      experience building end-to-end software, from backend APIs and data
+      systems to interactive frontend experiences with Vue.js and React. I like
+      taking ideas apart, figuring out how they work, and turning them into
+      something useful. That curiosity carries into my personal projects, where
+      I get to experiment with new technologies and build things just for the
+      fun of it. Outside of code, I'm into gaming, cars, PC building, art, and
+      books. A bit of a mixed bag, but I think that's what keeps things
+      interesting.
     </p>
-    <p class="pb-20 text-gray-300">
+    <!-- <p class="pb-20 text-gray-300">
       When I'm not coding, you can find me exploring new tech trends, playing
       games, or enjoying a good anime series among a plethora of things
-    </p>
+    </p> -->
 
     <div class="text-white text-center font-bold pb-4">My Tools</div>
 
