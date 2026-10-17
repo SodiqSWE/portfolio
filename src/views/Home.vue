@@ -1,7 +1,11 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "vue";
+import Memoji from "../assets/faviconMemoji.png";
+import LlosiScreenshot from "../assets/llosiScreenshot.png";
 import Steam from "./Steam.vue";
 import TypingCursorEditor from "../components/TypingCursorEditor.vue";
+import ToolsCarousel from "../components/ToolsCarousel.vue";
+import { technologies } from "../data/technologies.ts";
 
 const titles = ["a software engineer", "a Dev", "a Builder", "a Thinker"];
 const currentTitle = ref(0);
@@ -55,7 +59,7 @@ onUnmounted(() => {
   <section class="home">
     <div class="flex items-center justify-center">
       <img
-        src="../assets/memoji2.jpg"
+        :src="Memoji"
         alt="Sodiq Memoji"
         class="h-32 w-32 rounded-full border-4 border-gray-950 shadow-lg object-cover"
       />
@@ -84,166 +88,11 @@ onUnmounted(() => {
       books. A bit of a mixed bag, but I think that's what keeps things
       interesting.
     </p>
-    <!-- <p class="pb-20 text-gray-300">
-      When I'm not coding, you can find me exploring new tech trends, playing
-      games, or enjoying a good anime series among a plethora of things
-    </p> -->
 
     <div class="text-white text-center font-bold pb-4">My Tools</div>
 
-    <div
-      class="w-full inline-flex flex-nowrap overflow-hidden mask-[linear-gradient(to_right,transparent_0,black_128px,black_calc(100%-200px),transparent_100%)] pb-20"
-    >
-      <ul
-        class="relative flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-scroll"
-      >
-        <li>
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
-            alt="Python"
-            class="h-16 inline-block"
-          />
-        </li>
-        <li>
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
-            alt="Java"
-            class="h-16 inline-block"
-          />
-        </li>
-        <li>
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
-            alt="Typescript"
-            class="h-16 inline-block"
-          />
-        </li>
-        <li>
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
-            alt="Javascript"
-            class="h-16 inline-block"
-          />
-        </li>
-        <li>
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg"
-            alt="Vue JS"
-            class="h-16 inline-block"
-          />
-        </li>
-        <li>
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original-wordmark.svg"
-            alt="Tailwindcss"
-            class="h-16 inline-block"
-          />
-        </li>
-        <li>
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg"
-            alt="Bootstrap"
-            class="h-16 inline-block"
-          />
-        </li>
-        <li>
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
-            alt="PostgreSQL"
-            class="h-16 inline-block"
-          />
-        </li>
-        <li>
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/graphql/graphql-plain.svg"
-            alt="GraphQL"
-            class="h-16 inline-block"
-          />
-        </li>
-        <li>
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
-            alt="AWS"
-            class="h-16 inline-block"
-          />
-        </li>
-      </ul>
-      <ul
-        class="relative flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-scroll"
-        aria-hidden="true"
-      >
-        <li>
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
-            alt="Python"
-            class="h-16 inline-block"
-          />
-        </li>
-        <li>
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
-            alt="Java"
-            class="h-16 inline-block"
-          />
-        </li>
-        <li>
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
-            alt="Typescript"
-            class="h-16 inline-block"
-          />
-        </li>
-        <li>
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
-            alt="Javascript"
-            class="h-16 inline-block"
-          />
-        </li>
-        <li>
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg"
-            alt="Vue JS"
-            class="h-16 inline-block"
-          />
-        </li>
-        <li>
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original-wordmark.svg"
-            alt="Tailwindcss"
-            class="h-16 inline-block"
-          />
-        </li>
-        <li>
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg"
-            alt="Bootstrap"
-            class="h-16 inline-block"
-          />
-        </li>
-        <li>
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
-            alt="PostgreSQL"
-            class="h-16 inline-block"
-          />
-        </li>
-        <li>
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/graphql/graphql-plain.svg"
-            alt="GraphQL"
-            class="h-16 inline-block"
-          />
-        </li>
-        <li>
-          <img
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
-            alt="AWS"
-            class="h-16 inline-block"
-          />
-        </li>
-      </ul>
-    </div>
+    <ToolsCarousel :technologies="technologies" />
+
     <div class="pb-20">
       <div class="flex flex-wrap items-center gap-y-2 justify-between pb-5">
         <p class="text-white font-bold space-y-4">Work</p>
@@ -297,7 +146,27 @@ onUnmounted(() => {
           >See All Projects</router-link
         >
       </div>
-      <ul class="flex flex-col">
+
+      <!-- Revamped Project Section -->
+      <div class="flex flex-col gap-8">
+        <div class="flex">
+          <img
+            :src="LlosiScreenshot"
+            alt="Llosi Screenshot"
+            class="project-screenshot"
+          />
+          <text class="text-white">Llosi</text>
+          <p class="text-white">Llosi</p>
+        </div>
+        <div>
+          <img
+            :src="LlosiScreenshot"
+            alt="Llosi Screenshot"
+            class="project-screenshot"
+          />
+        </div>
+      </div>
+      <!-- <ul class="flex flex-col">
         <li
           class="inset-4 hover:bg-gray-600 rounded-t-lg transition-colors duration-300 ease-in-out px-4"
         >
@@ -342,7 +211,7 @@ onUnmounted(() => {
             </p>
           </a>
         </li>
-      </ul>
+      </ul> -->
     </div>
     <div>
       <Steam />
