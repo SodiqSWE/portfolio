@@ -149,14 +149,13 @@ onUnmounted(() => {
 
       <!-- Revamped Project Section -->
       <div class="flex flex-col gap-8">
-        <div class="flex">
+        <div class="flex justify-around">
+          <h3 class="text-white">Llosi</h3>
           <img
             :src="LlosiScreenshot"
             alt="Llosi Screenshot"
             class="project-screenshot"
           />
-          <text class="text-white">Llosi</text>
-          <p class="text-white">Llosi</p>
         </div>
         <div>
           <img
