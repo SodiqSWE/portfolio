@@ -5,7 +5,6 @@
 .home {
   max-width: 800px;
   margin: 0 auto;
-  padding: 1rem;
 }
 
 .header-glass {
@@ -36,6 +35,10 @@
   width: 300px;
 }
 
+.pop-out-right {
+  transform: translateX(20);
+}
+
 @theme {
   /* Carousel */
   --animate-scroll: infinite-scroll 25s linear infinite;
@@ -58,6 +61,9 @@
       opacity: 0;
     }
   }
+
+  --font-display: "Oswald", sans-serif;
+  --font-editorial: "Playfair Display", serif;
 }
 
 /* Scrollbar track and thumb for dark mode */

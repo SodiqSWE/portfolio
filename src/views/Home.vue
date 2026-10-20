@@ -149,8 +149,20 @@ onUnmounted(() => {
 
       <!-- Revamped Project Section -->
       <div class="flex flex-col gap-8">
-        <div class="flex justify-around">
-          <h3 class="text-white">Llosi</h3>
+        <div class="flex justify-around gap-4">
+          <div class="flex flex-col justify-center">
+            <div class="flex justify-center">
+              <h1
+                class="text-white font-editorial text-6xl font-[1000] hover:translate-x-4"
+              >
+                Llosi
+              </h1>
+            </div>
+            <p class="text-white">
+              A debt paypment simulator that let's you use different "What-If"
+              scenarios and data visualizations to help plan
+            </p>
+          </div>
           <img
             :src="LlosiScreenshot"
             alt="Llosi Screenshot"
