@@ -7,10 +7,12 @@ import TypingCursorEditor from "../components/TypingCursorEditor.vue";
 import ToolsCarousel from "../components/ToolsCarousel.vue";
 import { technologies } from "../data/technologies.ts";
 
+const titleRef = ref<HTMLElement | null>(null);
 const titles = ["a software engineer", "a Dev", "a Builder", "a Thinker"];
 const currentTitle = ref(0);
 const displayedText = ref("");
 
+let initialInterval: number;
 let typingInterval: number;
 
 const typeTitle = () => {
@@ -46,11 +48,48 @@ const deleteTitle = () => {
   }, 60);
 };
 
+const handlePointerMove = (event: PointerEvent) => {
+  const title = titleRef.value;
+
+  // Only animate for mouse-like pointers.
+  if (!title || event.pointerType !== "mouse") return;
+
+  const rect = title.getBoundingClientRect();
+
+  // Cursor position relative to the title's center.
+  const dx = event.clientX - (rect.left + rect.width / 2);
+  const dy = event.clientY - (rect.top + rect.height / 2);
+
+  const distance = Math.hypot(dx, dy);
+  const radius = 240;
+  const maxOffset = 10;
+
+  // Pull weakens as the cursor moves farther away.
+  const strength = Math.max(0, 1 - distance / radius);
+
+  const x = Math.max(-maxOffset, Math.min(maxOffset, dx * 0.12 * strength));
+
+  const y = Math.max(-maxOffset, Math.min(maxOffset, dy * 0.12 * strength));
+
+  title.style.transform = `translate(${x}px, ${y}px)`;
+};
+
+const resetTitle = () => {
+  if (titleRef.value) {
+    titleRef.value.style.transform = "translate(0, 0)";
+  }
+};
+
 onMounted(() => {
-  typeTitle();
+  // Wait a little on page mount to let the blinking cursor shine
+  initialInterval = setTimeout(() => {
+    typeTitle();
+  }, 2000);
+  // typeTitle();
 });
 
 onUnmounted(() => {
+  clearInterval(initialInterval);
   clearInterval(typingInterval);
 });
 </script>
@@ -151,23 +190,30 @@ onUnmounted(() => {
       <div class="flex flex-col gap-8">
         <div class="flex justify-around gap-4">
           <div class="flex flex-col justify-center">
-            <div class="flex justify-center">
-              <h1
-                class="text-white font-editorial text-6xl font-[1000] hover:translate-x-4"
+            <section
+              class="py-16"
+              @pointermove="handlePointerMove"
+              @pointerleave="resetTitle"
+            >
+              <h2
+                ref="titleRef"
+                class="flex justify-center text-white font-editorial text-6xl font-[1000] tracking-tight transition-transform duration-200 ease-out motion-reduce:transform-none! motion-reduce:transition-none"
               >
                 Llosi
-              </h1>
-            </div>
-            <p class="text-white">
+              </h2>
+            </section>
+            <p class="text-white text-center">
               A debt paypment simulator that let's you use different "What-If"
               scenarios and data visualizations to help plan
             </p>
           </div>
-          <img
-            :src="LlosiScreenshot"
-            alt="Llosi Screenshot"
-            class="project-screenshot"
-          />
+          <div class="flex flex-col justify-center">
+            <img
+              :src="LlosiScreenshot"
+              alt="Llosi Screenshot"
+              class="project-screenshot transition duration-300 ease-in-out hover:-translate-y-8 hover:scale-200"
+            />
+          </div>
         </div>
         <div>
           <img
